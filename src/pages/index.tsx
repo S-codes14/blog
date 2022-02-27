@@ -28,13 +28,6 @@ const GridRow: any = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${(props: any) =>
-    props.background
-      ? `linear-gradient(
-      -185deg,
-      ${rgba(darken(0.1, props.theme.colors.primary), 0.7)}, 
-      ${rgba(lighten(0.1, props.theme.colors.black), 0.9)}), url(${config.defaultBg}) no-repeat`
-      : null};
   background-size: cover;
   padding: 2rem 4rem;
   color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
@@ -66,10 +59,9 @@ export default ({ data }: PageProps) => {
             <HomepageContent center={true}>
               <img src={config.siteLogo} alt={config.siteTitle} />
               <h1>
-                Hi. I am <br />
-                Majid Hajian
+                Sibongumusa Lungelo
               </h1>
-              <p>I write about Dart, Flutter, JavaScript, Angular, React, and ...</p>
+              <p></p>
               <Link to="/contact">
                 <Button big={true}>
                   <svg
@@ -100,15 +92,14 @@ export default ({ data }: PageProps) => {
           </GridRow>
           <GridRow>
             <HomepageContent>
-              <h2>About Me</h2>
+              <h2>S-codes Talkin</h2>
               <p>
-                Though I am a results-driven softiware architect and developer by day who have
-                converted inactive designs to fully interactive, well-developed, accessible and
-                standards-based user interfaces. I am completely enthusiast and passionate about
-                Flutter/Dart and JavaScript world.
+              I will be talking shit, this blog isnt really a dev blog but it is everything that is in my mind
+                Get to know me better, explore my thought process, and learn more about what I do.
+                
               </p>
               <hr />
-              <h2>Latest Blog</h2>
+              <h2>Latest</h2>
               {edges.map((post) => (
                 <Article
                   title={post.node.frontmatter.title}

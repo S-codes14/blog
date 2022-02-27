@@ -16,7 +16,7 @@ export default () => {
       <Wrapper>
         <Content>
           <p>Super cool intro text to get people contacting me!</p>
-          <a href="https://www.twitter.com/mhadaily">
+          <a href="https://www.twitter.com/s-codes14">
             <Button big={true}>
               <svg
                 width="1792"
@@ -29,7 +29,7 @@ export default () => {
               Twitter
             </Button>
           </a>
-          <a href="https://www.linkedin.com/in/mhadaily">
+          {/* <a href="https://www.linkedin.com/in/mhadaily">
             <Button big={true}>
               <svg
                 width="1792"
@@ -41,8 +41,8 @@ export default () => {
               </svg>
               Linkedin
             </Button>
-          </a>
-          <a href="https://www.majidhajian.com">
+          </a> */}
+          <a href="https://s-codes14.netlify.app">
             <Button big={true}>
               <svg
                 width="1792"

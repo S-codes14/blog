@@ -31,12 +31,12 @@ const Footer = () => {
   const render = (data: DataProps) => {
     return (
       <FooterWrapper>
-        &copy; {split(data.site.buildTime, '.')[2]} by Majid Hajian. All rights reserved. <br />{' '}
-        <a href="https://github.com/mhadaily/gatsby-starter-typescirpt-power-blog">
-          GitHub Repository{' '}
+        &copy; {split(data.site.buildTime, '.')[2]} S-codes14. <br />{' '}
+        <a href="https://s-codes14.netlify.app">
+          Sibongumusa Lungelo{' '}
         </a>{' '}
         <br />
-        <span>Last build: {data.site.buildTime}</span>{' '}
+        {/* <span>Last build: {data.site.buildTime}</span>{' '} */}
       </FooterWrapper>
     );
   };
