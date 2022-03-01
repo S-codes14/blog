@@ -28,6 +28,13 @@ const GridRow: any = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: ${(props: any) =>
+    props.background
+      ? `linear-gradient(
+      -185deg,
+      ${rgba(darken(0.1, props.theme.colors.primary), 0.7)}, 
+      ${rgba(lighten(0.1, props.theme.colors.black), 0.9)}), url(${config.defaultBg}) no-repeat`
+      : null};
   background-size: cover;
   padding: 2rem 4rem;
   color: ${(props: any) => (props.background ? props.theme.colors.white : null)};
