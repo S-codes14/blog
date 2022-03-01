@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { rgba, darken, lighten } from 'polished';
+// import { rgba, darken, lighten } from 'polished';
 import { Layout, Wrapper, Button, Article } from '../components';
 import PageProps from '../models/PageProps';
 import { Helmet } from 'react-helmet';
@@ -30,10 +30,7 @@ const GridRow: any = styled.div`
   align-items: center;
   background: ${(props: any) =>
     props.background
-      ? `linear-gradient(
-      -185deg,
-      ${rgba(darken(0.1, props.theme.colors.primary), 0.7)}, 
-      ${rgba(lighten(0.1, props.theme.colors.black), 0.9)}), url(${config.defaultBg}) no-repeat`
+      ? `url(${config.defaultBg}) no-repeat`
       : null};
   background-size: cover;
   padding: 2rem 4rem;

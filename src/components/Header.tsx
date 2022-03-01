@@ -1,17 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { darken, lighten, rgba } from 'polished';
+// import { darken, lighten, rgba } from 'polished';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
 
 const HeaderWrapper = styled.header<{ banner: string }>`
   position: relative;
-  background: linear-gradient(
-      -185deg,
-      ${(props) => rgba(darken(0.1, props.theme.colors.primary), 0.6)},
-      ${(props) => rgba(lighten(0.1, props.theme.colors.grey.dark), 0.8)}
-    ),
-    url(${(props) => props.banner}) no-repeat;
+  background: url(${(props) => props.banner}) no-repeat;
   background-size: cover;
   padding: 8rem 2rem 10rem;
   text-align: center;

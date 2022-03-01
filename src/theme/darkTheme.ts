@@ -2,8 +2,8 @@ import { transitions, fontSize } from './common';
 
 const darkTheme = {
   colors: {
-    primary: '#72cc96', // Color for buttons or links
-    bg: '#000', // Background color
+    primary: '#3982e4', // Color for buttons or links
+    bg: '#242526', // Background color
     white: '#fff',
     black: '#000',
     grey: {

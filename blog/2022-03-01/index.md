@@ -1,6 +1,6 @@
 ---
 date: "2022-03-01"
-title: "Hello World"
+title: "Hello World 😄"
 category: "Life"
 tags: ['Technology', 'Life']
 banner: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7a7d6dKdwRWFLhyhFwnKAiiUw9rDV6jAmyg&usqp=CAU"
