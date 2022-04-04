@@ -1,6 +1,14 @@
+---
+date: "2022-04-04"
+title: "In a lonely World 😔 "
+category: "Life"
+tags: ['Life']
+banner: "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F4ed8c503-93ef-4cb5-adc0-278fd0dff73d.jpg?fit=scale-down&source=next&width=700"
+---
+
 Have you ever felt alone, its probably the worst feeling now imagine i have to be alone all the time, i mean i don't have real people to call friends sometimes I don't even get a text message from anyone it was worse last year when no one remembered my birthday so no one said happy birthday until the next day, have you ever felt forgotten.
 
-
+## Lonliness
 
 We as humans don't want to feel bored or lonely we decrease our dopamine by doing that, we always want to be around people All the time because that is what makes us happy, but i have become anti social i don't care about people anymore  these days if i get a notification that says i have a text message, i won't scream and shout saying that i have one that's the old me, the thing is i don't get as much pleasure as i used to get, i spend most of my time today in front of a computer screen i just don't care about the shit that happens around me, being around people and having social conversation just feels weird now 😔 and it's hard for me to do so.
 
