@@ -2,11 +2,6 @@
   "name": "gatsby-starter-typescirpt-power-blog",
   "description": "gatsyby blog template with typescript and tslint",
   "version": "1.1.0",
-  "author": "Majid Hajian ( mhadaily@gmail.com )",
-  "keywords": [
-    "gatsby, typescript",
-    "blog"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
