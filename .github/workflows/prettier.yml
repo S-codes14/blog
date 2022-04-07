@@ -20,8 +20,9 @@ jobs:
       - name: Install Prettier
         run: npm install -g prettier
 
-      - name: Check Format
+      - name: Format & Check Format
         run: |
-          prettier -c "./**/*.{js,css,json}"
           npm run format
+          prettier -c "./**/*.{js,css,json}"
+          
 
