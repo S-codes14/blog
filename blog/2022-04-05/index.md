@@ -1,4 +1,14 @@
+---
+date: "2022-04-05"
+title: "Back to school😔 "
+category: "Life"
+tags: ['Life']
+banner: "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F4ed8c503-93ef-4cb5-adc0-278fd0dff73d.jpg?fit=scale-down&source=next&width=700"
+---
+
 Do you know the pain of waking up early in the morning even before the sun  🌤️ is out just to go to a place you dispise the most. A place that glorifies itself by calling itself a place of learning even though you don't learn the skills you want to learn.
+
+## back to hell
 
 Today marks the beginning of the second term  hell again, you know sometimes I just don't understand the school system like what is it trying to achieve because today we live in a completely different world. Their first mistake is that they teach us the skills we don't want to learn and the skills we want to learn are not included, i learnt more from YouTube then school, YouTube even thought me to code,  you see that's the skill i wanted to learn and since learnt it willingly you put in more hours without someone forcing you, yet with school you are forced to learn what they want you to learn the problem 😒 with that is that they also expect you to pass or do well.
 
