@@ -79,7 +79,7 @@ export default ({ data }: PageProps) => {
                   Contact
                 </Button>
               </Link>
-              <Link to="/blog">
+              <Link to="/blogs">
                 <Button big={true}>
                   <svg
                     width="1792"
@@ -116,7 +116,7 @@ export default ({ data }: PageProps) => {
                 />
               ))}
               <p className={'textRight'}>
-                <Link to={'/blog'}>All articles ({totalCount})</Link>
+                <Link to={'/blogs'}>All articles ({totalCount})</Link>
               </p>
             </HomepageContent>
           </GridRow>
