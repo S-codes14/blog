@@ -20,7 +20,7 @@ jobs:
 
       - name: Install and Build 🔧 # Build the Project
         run: |
-          npm install
+          npm install --force
           npm run deploy:gh
 
       - name: Deploy 🚀
