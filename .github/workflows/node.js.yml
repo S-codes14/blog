@@ -20,8 +20,8 @@ jobs:
 
       - name: Install and Build 🔧 # Build the Project
         run: |
-          npm install --force
-          npm run deploy:gh
+          yarn install
+          yarn run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3

@@ -1,4 +1,2 @@
 User-agent: *
 Disallow:
-
-sitemap: https://power-blog-typescirpt.github.com/sitemap.xml

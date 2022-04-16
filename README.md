@@ -1,69 +1,13 @@
-# Gatsby 2 Power blog starter with Typescript
+# [blog](https://blog-s-codes14.netlify.app/)
 
-I constantly update this theme as this is my main website theme
+My personal blog. Forked from  [Dan Abramov](https://github.com/gaearon/overreacted.io) which was forked from [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog). Syntax theme based on [Sarah Drasner's Night Owl](https://github.com/sdras/night-owl-vscode-theme/) with small tweaks.
 
-### Description
+To run locally, `yarn`, then `yarn dev`, then open http://localhost:8000.
 
-This is a standard starter with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), Sass, StyleComponent, PWA
+## Contributing Translations
 
-### new project
+You can translate any article on the website into your language!
 
-```
-gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-blog
-```
+Add a Markdown file with the translation to the corresponding article folder. For example `index.fr.md` in `src/pages/optimized-for-change/`.
 
-## Success Stories
-
-- I am using this template for my website <https://www.majidhajian.com>
-
-### Features
-
-- Mobile-First approach in development.
-- Styled Component implementation
-- SCSS Ready (if neccessary)
-- Themable ready (Light/Dark or even more)
-- TSLint & Prettier
-- a11y lint rules
-- very optimized images by Gatsby Image
-- Purge CSS
-- Offline support
-- Category and Tag for post
-- Type Safe by TypeScript
-- Format Safe by TSLint, StyleLint and Prettier with Lint-Staged(Husky) (Git Hooks)
-- Blog page
-- Syntax highlighting in code blocks.
-- Pagination Ready
-- Ready to deploy to Github pages
-- Automatic RSS generation.
-- Automatic Sitemap generation.
-- Automatic support for Google Tag Manager
-- Netlify deploy ready
-
-#### Desktop
-
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png">
-
-#### Dark Mode
-
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop-dark.png">
-
-#### Mobile
-
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/mobile.png" width="300px">
-
-### Keywords
-
-- PWA
-- Blog
-- Personal website
-- TypeScript
-- TSLint
-- Progressive web app
-- StyleLint
-- Prettier
-- Lint-Staged
-- Styling:SCSS
-- Prisim.js
-- Style Components
-- Markdown
-- Pagination
+If you're the first one to translate a post to your language, you'll need to add it to to the list in `./i18n.js`. See [this PR](https://github.com/gaearon/overreacted.io/pull/159) for an example. If your language needs special font characters, add it to the appropriate place in [this list](https://github.com/s-codes/blog/blob/5de6c128f798506a54a1a34c32cd5446beecc272/src/utils/i18n.js#L15).

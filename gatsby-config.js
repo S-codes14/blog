@@ -1,99 +1,194 @@
-require('source-map-support').install();
-require('ts-node').register({
-  compilerOptions: {
-    module: 'commonjs',
-    target: 'es2017',
-  },
-});
-
-const config = require('./config/SiteConfig').default;
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
-
 module.exports = {
-  pathPrefix: config.pathPrefix,
   siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
+    title: 'S-codes Talkin',
+    author: 'Sibongumusa Lungelo - s-codes14',
+    description: 'Personal blog by Sibongumusa Lungelo - s-codes14. I just code.',
+    siteUrl: 'https://blog-s-codes14.netlify.app/',
+    social: {
+      twitter: '@s_codes14',
+    },
   },
+  pathPrefix: '/',
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-offline',
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-manifest',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-lodash',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'post',
-        path: `${__dirname}/blog`,
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
     {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: config.Google_Tag_Manager_ID,
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '÷',
+            },
+          },
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
           {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
-              rel: 'nofollow noopener noreferrer',
             },
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-autolink-headers',
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-130227707-1`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                const siteUrl = site.siteMetadata.siteUrl;
+                const postText = `
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog. You can read it online by <a href="${siteUrl +
+                  edge.node.fields.slug}">clicking here</a>.)</div>
+              `;
+
+                let html = edge.node.html;
+                // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
+                html = html
+                  .replace(/href="\//g, `href="${siteUrl}/`)
+                  .replace(/src="\//g, `src="${siteUrl}/`)
+                  .replace(/"\/static\//g, `"${siteUrl}/static/`)
+                  .replace(/,\s*\/static\//g, `,${siteUrl}/static/`);
+
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.spoiler,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': html + postText }],
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [frontmatter___date] }
+                  filter: {fields: { langKey: {eq: "en"}}}
+                ) {
+                  edges {
+                    node {
+                      excerpt(pruneLength: 250)
+                      html
+                      fields { 
+                        slug   
+                      }
+                      frontmatter {
+                        title
+                        date
+                        spoiler
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: "s-codes14's Blog RSS Feed",
+          },
         ],
       },
     },
     {
+      resolve: `gatsby-plugin-ebook`,
+      options: {
+        filename: 'overreacted-ebook.epub',
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                author
+              }
+            }
+            allMarkdownRemark(
+              sort: { fields: frontmatter___date, order: ASC },
+              filter: { fields: { langKey: { eq: "en" } } }
+            ) {
+              edges {
+                node {
+                  id
+                  fileAbsolutePath
+                  rawMarkdownBody
+                  frontmatter {
+                    title
+                    date
+                  }
+                }
+              }
+            }
+          }`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `S-codesTalkin`,
+        short_name: `S-codesTalkin`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#a2bbfa`,
+        display: `minimal-ui`,
+        icon: `src/assets/icon.png`,
+        theme_color_in_head: false,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: 'src/utils/typography.ts',
+        pathToConfigModule: 'src/utils/typography',
       },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-plugin-i18n',
       options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleAlt,
-        description: config.siteDescription,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'standalone',
-        icon: config.favicon,
+        langKeyDefault: 'en',
+        useLangKeyLayout: false,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/static/assets`,
-      },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      // Removes unused css rules
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        // Activates purging in gatsby develop
-        develop: true,
-        // Purge only the main css file
-        purgeOnly: ['all.scss'],
-      },
-    },
-    `gatsby-plugin-netlify`,
+    `gatsby-plugin-catch-links`,
   ],
 };
