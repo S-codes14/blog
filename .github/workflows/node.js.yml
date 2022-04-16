@@ -20,9 +20,8 @@ jobs:
 
       - name: Install and Build 🔧 # Build the Project
         run: |
-          npm install --global yarn
-          yarn install
-          yarn run build
+          npm install
+          npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
