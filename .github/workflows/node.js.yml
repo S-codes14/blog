@@ -1,6 +1,6 @@
 name: Gatsby Publish
 
-on:
+on: 
   push:
     branches:
       - main
